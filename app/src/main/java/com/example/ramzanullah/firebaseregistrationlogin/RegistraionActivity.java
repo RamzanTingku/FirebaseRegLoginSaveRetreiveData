@@ -41,7 +41,10 @@ public class RegistraionActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             Toast.makeText(RegistraionActivity.this, "Registration successful", Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(RegistraionActivity.this, LoginActivity.class);
+                            //Intent i = new Intent(RegistraionActivity.this, LoginActivity.class);
+                            //startActivity(i);
+                            Intent i = new Intent(RegistraionActivity.this, ProfileActivity.class);
+                            i.putExtra("Email", firebaseAuth.getCurrentUser().getEmail());
                             startActivity(i);
                         } else {
                             Log.e("ERROR", task.getException().toString());
