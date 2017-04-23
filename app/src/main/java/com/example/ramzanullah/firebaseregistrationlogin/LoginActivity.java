@@ -40,8 +40,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(LoginActivity.this, ProfileActivity.class);
-                            i.putExtra("Email", firebaseAuth.getCurrentUser().getEmail());
+                            Intent i = new Intent(LoginActivity.this, SavingRetreivingData.class);
+                            //i.putExtra("Email", firebaseAuth.getCurrentUser().getDisplayName());
                             startActivity(i);
                         } else {
                             Log.e("ERROR", task.getException().toString());
